@@ -9,3 +9,6 @@ gem 'middleman-livereload', '~> 3.1.0'
 
 # Slim template
 gem 'slim'
+
+# Deploy
+gem 'middleman-deploy', '~> 0.2.4'
