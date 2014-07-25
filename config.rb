@@ -1,5 +1,3 @@
-require 'slim'
-
 ###
 # Compass
 ###
