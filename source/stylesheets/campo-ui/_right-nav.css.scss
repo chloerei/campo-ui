@@ -1,0 +1,38 @@
+body.noscroll {
+  overflow: hidden;
+}
+
+.left-nav-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  @include transition(visibility 0.3s ease-in-out, opacity 0.3s ease-in-out);
+}
+
+.left-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: white;
+  @include transition(transform 0.3s ease-in-out);
+  @include transform(translateX(-100%));
+}
+
+.left-nav.active {
+  .left-nav-mask {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .left-nav-drawer {
+    box-shadow: 1px 0 1px rgba(0, 0, 0, 0.25);
+    @include transform(translateX(0));
+  }
+}
