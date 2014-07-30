@@ -1,0 +1,12 @@
+.toolbar {
+  background: $blue;
+  padding: 4px;
+  @include display(flex);
+
+  .toolbar-action {
+  }
+
+  .toolbar-title {
+    @include flex(1);
+  }
+}

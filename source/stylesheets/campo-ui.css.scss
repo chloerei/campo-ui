@@ -1,5 +1,8 @@
 @import "normalize";
 @import "bourbon";
+@import "font-awesome";
 @import "neat";
 
-@import "campo-ui/typography"
+@import "campo-ui/variables";
+@import "campo-ui/typography";
+@import "campo-ui/toolbar";

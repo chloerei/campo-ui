@@ -18,3 +18,6 @@ gem 'slim', '~> 2.0.3'
 
 # Deploy
 gem 'middleman-deploy', '~> 0.2.4'
+
+# Font Awesonme icon
+gem 'font-awesome-sass', '~> 4.1'
