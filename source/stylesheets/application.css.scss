@@ -1,1 +1,8 @@
 @import "campo-ui";
+
+.main {
+}
+
+.container {
+  @include outer-container;
+}
