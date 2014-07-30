@@ -9,7 +9,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-size: 1em;
   line-height: 1.5em;
-  margin: 0;
+  margin: 0 0 0.75em;
 }
 
 h1 {
@@ -34,4 +34,27 @@ h5 {
 
 h6 {
   font-size: 1em;
+}
+
+p {
+  margin: 0 0 0.75em;
+}
+
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  margin: 1.5em 0;
+}
+
+code {
+  font-family: $monospace;
+}
+
+blockquote {
+  border-left: 2px solid #ddd;
+  color: lighten(#333, 15);
+  margin: 1.5em 0;
+  padding-left: 1.5em * 0.5;
 }
