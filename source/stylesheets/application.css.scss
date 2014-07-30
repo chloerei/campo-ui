@@ -6,3 +6,7 @@
 .container {
   @include outer-container;
 }
+
+.post {
+  padding: 16px;
+}
