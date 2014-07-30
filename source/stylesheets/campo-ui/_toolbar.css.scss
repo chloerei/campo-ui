@@ -1,12 +1,20 @@
 .toolbar {
-  background: $blue;
   padding: 4px;
   @include display(flex);
 
-  .toolbar-action {
+  &.app-bar {
+    background: $blue;
+    color: white;
   }
+}
 
-  .toolbar-title {
-    @include flex(1);
+.toolbar-action {
+  .button {
+    width: 48px;
   }
+}
+
+.toolbar-title {
+  padding: 12px;
+  @include flex(1);
 }
