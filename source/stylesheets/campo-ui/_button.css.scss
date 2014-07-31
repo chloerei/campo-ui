@@ -10,6 +10,11 @@
   @include transition(background 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
 }
 
+.button-block {
+  display: block;
+  width: 100%;
+}
+
 @mixin button-flat($color) {
   color: $color;
 }
@@ -161,4 +166,3 @@
     @include button-icon($purple, $purple-lightest);
   }
 }
-
