@@ -9,7 +9,8 @@
 }
 
 .toolbar-action {
-  .button {
+  button,
+  #{$all-button-inputs} {
     width: 48px;
     padding: 12px;
     min-width: 0;
