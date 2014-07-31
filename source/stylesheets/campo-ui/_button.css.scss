@@ -1,6 +1,164 @@
 .button {
   background: transparent;
-  padding: 12px;
+  padding: 6px 12px;
   border: none;
   margin: 0;
+  border-radius: 2px;
+  min-width: 88px;
+  text-align: center;
+  outline: 0;
+  @include transition(background 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
 }
+
+@mixin button-flat($color) {
+  color: $color;
+}
+
+.button-flat {
+  &:hover {
+    background: rgba(153, 153, 153, 0.2);
+  }
+
+  &:active {
+    background: rgba(153, 153, 153, 0.4);
+  }
+
+  &[disabled] {
+    color: #999;
+    background: rgba(153, 153, 153, 0.1);
+  }
+
+  &.button-blue {
+    @include button-flat($blue);
+  }
+
+  &.button-red {
+    @include button-flat($red);
+  }
+
+  &.button-green {
+    @include button-flat($green);
+  }
+
+  &.button-yellow {
+    @include button-flat($yellow);
+  }
+
+  &.button-teal {
+    @include button-flat($teal);
+  }
+
+  &.button-purple {
+    @include button-flat($purple);
+  }
+}
+
+@mixin button-raised($color, $color-dark, $color-darker) {
+  color: white;
+  background: $color;
+
+  &:hover {
+    background: $color-dark;
+  }
+
+  &:active {
+    background: $color-darker;
+  }
+}
+
+.button-raised {
+  background: rgba(153, 153, 153, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.24);
+
+  &:hover {
+    background: rgba(153, 153, 153, 0.3);
+  }
+
+  &:active {
+    background: rgba(153, 153, 153, 0.4);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.23);
+  }
+
+  &[disabled] {
+    color: #999;
+    background: rgba(153, 153, 153, 0.1);
+    box-shadow: none;
+  }
+
+  &.button-blue {
+    @include button-raised($blue, $blue-dark, $blue-darker);
+  }
+
+  &.button-red {
+    @include button-raised($red, $red-dark, $red-darker);
+  }
+
+  &.button-green {
+    @include button-raised($green, $green-dark, $green-darker);
+  }
+
+  &.button-yellow {
+    @include button-raised($yellow, $yellow-dark, $yellow-darker);
+  }
+
+  &.button-teal {
+    @include button-raised($teal, $teal-dark, $teal-darker);
+  }
+
+  &.button-purple {
+    @include button-raised($purple, $purple-dark, $purple-darker);
+  }
+}
+
+@mixin button-icon($color, $color-lightest) {
+  color: $color;
+
+  &:active {
+    background: $color-lightest;
+  }
+}
+
+.button-icon {
+  min-width: 0;
+  color: #555;
+  width: 36px;
+  padding: 6px 0;
+  border-radius: 18px;
+
+  &:hover {
+  }
+
+  &:active {
+    background: rgba(153, 153, 153, 0.4);
+  }
+
+  &[disabled] {
+    color: #999;
+    background: none;
+  }
+
+  &.button-blue {
+    @include button-icon($blue, $blue-lightest);
+  }
+
+  &.button-red {
+    @include button-icon($red, $red-lightest);
+  }
+
+  &.button-green {
+    @include button-icon($green, $green-lightest);
+  }
+
+  &.button-yellow {
+    @include button-icon($yellow, $yellow-lightest);
+  }
+
+  &.button-teal {
+    @include button-icon($teal, $teal-lightest);
+  }
+
+  &.button-purple {
+    @include button-icon($purple, $purple-lightest);
+  }
+}
+
