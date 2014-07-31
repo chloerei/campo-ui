@@ -2762,16 +2762,17 @@ textarea {
   input[type="email"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="url"]:disabled, input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="month"]:disabled, input[type="time"]:disabled, input[type="week"]:disabled,
   textarea:disabled {
     background: transparent;
-    border-bottom-style: dashed; }
+    border-bottom-style: dashed;
+    cursor: not-allowed; }
 
-/* line 26, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 27, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"] {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 16px; }
 
-/* line 31, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 32, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 textarea {
   resize: vertical; }
 
