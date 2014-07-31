@@ -1,0 +1,33 @@
+#{$all-text-inputs},
+textarea {
+  padding: 16px 0 7px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #ddd;
+  margin: 0 0 8px;
+  display: block;
+  width: 100%;
+  @include transition(border-color 0.3s ease-in-out);
+
+  &:focus {
+    border-bottom-width: 2px;
+    border-bottom-color: $blue;
+    margin-bottom: 7px;
+    outline: none;
+  }
+
+  &:disabled {
+    background: transparent;
+    border-bottom-style: dashed;
+  }
+}
+
+#{$all-text-inputs} {
+  @include box-sizing(content-box);
+  height: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
