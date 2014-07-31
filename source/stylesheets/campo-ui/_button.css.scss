@@ -17,6 +17,10 @@
 
 @mixin button-flat($color) {
   color: $color;
+
+  &[disabled] {
+    color: #999;
+  }
 }
 
 .button-flat {
@@ -69,6 +73,12 @@
   &:active {
     background: $color-darker;
   }
+
+  &[disabled] {
+    color: #999;
+    background: rgba(153, 153, 153, 0.1);
+    box-shadow: none;
+  }
 }
 
 .button-raised {
@@ -120,6 +130,11 @@
 
   &:active {
     background: $color-lightest;
+  }
+
+  &[disabled] {
+    color: #999;
+    background: none;
   }
 }
 
