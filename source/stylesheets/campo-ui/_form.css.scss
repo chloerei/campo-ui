@@ -64,6 +64,7 @@ textarea {
   margin-bottom: 1em;
   color: #999;
   @include clearfix();
+  @include transition(color 0.3s ease-in-out);
 }
 
 .input-counter {
@@ -72,4 +73,5 @@ textarea {
   margin-bottom: 1em;
   color: #999;
   text-align: right;
+  @include transition(color 0.3s ease-in-out);
 }

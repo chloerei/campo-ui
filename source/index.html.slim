@@ -199,6 +199,7 @@ title: Welcome to Middleman
         input type="text" placeholder="Error"
         .input-message Error Emssage
 
-      .input
+      #input-counter.input data-counter="30"
         input type="text" placeholder="Character Counter"
-        .input-counter 0 / 30
+        coffee:
+          $('#input-counter').inputCounter()
