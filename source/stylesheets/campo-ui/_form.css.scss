@@ -1,19 +1,19 @@
 #{$all-text-inputs},
 textarea {
-  padding: 16px 0 7px;
+  padding: em(16) 0 em(7);
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid #ddd;
-  margin: 0 0 8px;
+  border-bottom: em(1) solid #ddd;
+  margin: 0 0 em(8);
   display: block;
   width: 100%;
   @include transition(border-color 0.3s ease-in-out);
 
   &:focus {
-    border-bottom-width: 2px;
+    border-bottom-width: em(2);
     border-bottom-color: $blue;
-    margin-bottom: 7px;
+    margin-bottom: em(7);
     outline: none;
   }
 
@@ -26,7 +26,7 @@ textarea {
 
 #{$all-text-inputs} {
   @include box-sizing(content-box);
-  height: 16px;
+  height: 1em;
 }
 
 textarea {

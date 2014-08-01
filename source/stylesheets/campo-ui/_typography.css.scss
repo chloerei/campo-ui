@@ -41,7 +41,7 @@ p {
 }
 
 hr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: em(1) solid #ddd;
   border-left: none;
   border-top: none;
   border-right: none;
@@ -53,7 +53,7 @@ code {
 }
 
 blockquote {
-  border-left: 2px solid #ddd;
+  border-left: em(2) solid #ddd;
   color: lighten(#333, 15);
   margin: 1.5em 0;
   padding-left: 1.5em * 0.5;

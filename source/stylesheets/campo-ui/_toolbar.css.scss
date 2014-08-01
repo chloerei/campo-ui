@@ -1,5 +1,5 @@
 .toolbar {
-  padding: 4px;
+  padding: em(4);
   @include display(flex);
 
   &.app-bar {
@@ -11,13 +11,13 @@
 .toolbar-action {
   button,
   #{$all-button-inputs} {
-    width: 48px;
-    padding: 12px;
+    width: em(48);
+    padding: em(12);
     min-width: 0;
   }
 }
 
 .toolbar-title {
-  padding: 12px 20px;
+  padding: em(12) em(20);
   @include flex(1);
 }

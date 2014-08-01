@@ -15,7 +15,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: em(300);
   background: white;
   @include transition(transform 0.3s ease-in-out);
   @include transform(translateX(-100%));
@@ -28,7 +28,7 @@
   }
 
   .left-nav-drawer {
-    box-shadow: 1px 0 1px rgba(0, 0, 0, 0.25);
+    box-shadow: em(1) 0 em(1) rgba(0, 0, 0, 0.25);
     @include transform(translateX(0));
   }
 }

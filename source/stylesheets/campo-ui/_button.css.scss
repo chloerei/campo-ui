@@ -1,11 +1,11 @@
 button,
 #{$all-button-inputs} {
   background: transparent;
-  padding: 6px 12px;
+  padding: em(6) em(12);
   border: none;
   margin: 0;
-  border-radius: 2px;
-  min-width: 88px;
+  border-radius: em(2);
+  min-width: em(88);
   text-align: center;
   outline: 0;
   @include transition(background 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
@@ -84,7 +84,7 @@ button,
 
 .button-raised {
   background: rgba(153, 153, 153, 0.2);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 em(1) em(1) rgba(0, 0, 0, 0.24);
 
   &:hover {
     background: rgba(153, 153, 153, 0.3);
@@ -92,7 +92,7 @@ button,
 
   &:active {
     background: rgba(153, 153, 153, 0.4);
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 em(3) em(3) rgba(0, 0, 0, 0.23);
   }
 
   &[disabled] {
@@ -142,9 +142,9 @@ button,
 .button-icon {
   min-width: 0;
   color: #555;
-  width: 36px;
-  padding: 6px 0;
-  border-radius: 18px;
+  width: em(36);
+  padding: em(6);
+  border-radius: em(18);
 
   &:hover {
   }
