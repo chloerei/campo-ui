@@ -98,7 +98,7 @@ a:hover {
  */
 /* line 108, /media/data/workspace/campo-ui/source/stylesheets/_normalize.css */
 abbr[title] {
-  border-bottom: 1px dotted; }
+  border-bottom: 0.0625em dotted; }
 
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
@@ -181,7 +181,7 @@ svg:not(:root) {
  */
 /* line 202, /media/data/workspace/campo-ui/source/stylesheets/_normalize.css */
 figure {
-  margin: 1em 40px; }
+  margin: 1em 2.5em; }
 
 /**
  * Address differences between Firefox and other browsers.
@@ -349,8 +349,8 @@ input[type="search"]::-webkit-search-decoration {
  */
 /* line 378, /media/data/workspace/campo-ui/source/stylesheets/_normalize.css */
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
+  border: 0.0625em solid silver;
+  margin: 0 0.125em;
   padding: 0.35em 0.625em 0.75em; }
 
 /**
@@ -2427,6 +2427,10 @@ th {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+/* line 1, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_common.css.scss */
+body.noscroll {
+  overflow: hidden; }
+
 /* line 1, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_typography.css.scss */
 body {
   background: white;
@@ -2471,7 +2475,7 @@ p {
 
 /* line 43, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_typography.css.scss */
 hr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.0625em solid #dddddd;
   border-left: none;
   border-top: none;
   border-right: none;
@@ -2483,7 +2487,7 @@ code {
 
 /* line 55, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_typography.css.scss */
 blockquote {
-  border-left: 2px solid #ddd;
+  border-left: 0.125em solid #dddddd;
   color: #595959;
   margin: 1.5em 0;
   padding-left: 0.75em; }
@@ -2492,11 +2496,11 @@ blockquote {
 button,
 input[type="button"], input[type="reset"], input[type="submit"] {
   background: transparent;
-  padding: 6px 12px;
+  padding: 0.375em 0.75em;
   border: none;
   margin: 0;
-  border-radius: 2px;
-  min-width: 88px;
+  border-radius: 0.125em;
+  min-width: 5.5em;
   text-align: center;
   outline: 0;
   -webkit-transition: background 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2558,14 +2562,14 @@ input[type="button"], input[type="reset"], input[type="submit"] {
 /* line 85, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
 .button-raised {
   background: rgba(153, 153, 153, 0.2);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 0.0625em 0.0625em rgba(0, 0, 0, 0.24); }
   /* line 89, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-raised:hover {
     background: rgba(153, 153, 153, 0.3); }
   /* line 93, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-raised:active {
     background: rgba(153, 153, 153, 0.4);
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.23); }
+    box-shadow: 0 0.1875em 0.1875em rgba(0, 0, 0, 0.23); }
   /* line 98, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-raised[disabled] {
     color: #999;
@@ -2666,9 +2670,9 @@ input[type="button"], input[type="reset"], input[type="submit"] {
 .button-icon {
   min-width: 0;
   color: #555;
-  width: 36px;
-  padding: 6px 0;
-  border-radius: 18px; }
+  width: 2.25em;
+  padding: 0.375em;
+  border-radius: 1.125em; }
   /* line 152, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-icon:active {
     background: rgba(153, 153, 153, 0.4); }
@@ -2740,12 +2744,12 @@ input[type="button"], input[type="reset"], input[type="submit"] {
 /* line 1, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
 textarea {
-  padding: 16px 0 7px;
+  padding: 1em 0 0.4375em;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid #ddd;
-  margin: 0 0 8px;
+  border-bottom: 0.0625em solid #dddddd;
+  margin: 0 0 0.5em;
   display: block;
   width: 100%;
   -webkit-transition: border-color 0.3s ease-in-out;
@@ -2754,31 +2758,74 @@ textarea {
   /* line 13, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
   input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
   textarea:focus {
-    border-bottom-width: 2px;
+    border-bottom-width: 0.125em;
     border-bottom-color: #5677fc;
-    margin-bottom: 7px;
+    margin-bottom: 0.4375em;
     outline: none; }
   /* line 20, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
   input[type="email"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="url"]:disabled, input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="month"]:disabled, input[type="time"]:disabled, input[type="week"]:disabled,
   textarea:disabled {
     background: transparent;
-    border-bottom-style: dashed;
-    cursor: not-allowed; }
+    border-bottom-style: dashed; }
 
-/* line 27, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 26, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"] {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  height: 16px; }
+  height: 1em; }
 
-/* line 32, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 31, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 textarea {
   resize: vertical; }
 
+/* line 37, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+.input.error input[type="email"], .input.error input[type="number"], .input.error input[type="password"], .input.error input[type="search"], .input.error input[type="tel"], .input.error input[type="text"], .input.error input[type="url"], .input.error input[type="color"], .input.error input[type="date"], .input.error input[type="datetime"], .input.error input[type="datetime-local"], .input.error input[type="month"], .input.error input[type="time"], .input.error input[type="week"],
+.input.error textarea {
+  border-bottom-width: 0.125em;
+  border-bottom-color: #e51c23;
+  margin-bottom: 0.4375em; }
+/* line 44, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+.input.error .input-message {
+  color: #e51c23; }
+  /* line 47, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+  .input.error .input-message:before {
+    content: "\f071";
+    font-family: FontAwesome;
+    float: right; }
+/* line 54, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+.input.error .input-counter {
+  color: #e51c23; }
+
+/* line 60, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+.input-message {
+  font-size: 0.75em;
+  line-height: 1em;
+  margin-bottom: 1em;
+  color: #999;
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out; }
+  /* line 15, /home/rei/.rvm/gems/ruby-2.1.1/gems/bourbon-4.0.2/app/assets/stylesheets/addons/_clearfix.scss */
+  .input-message:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 69, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+.input-counter {
+  font-size: 0.75em;
+  line-height: 1em;
+  margin-bottom: 1em;
+  color: #999;
+  text-align: right;
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out; }
+
 /* line 1, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_toolbar.css.scss */
 .toolbar {
-  padding: 4px;
+  padding: 0.25em;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -2794,13 +2841,13 @@ textarea {
 /* line 12, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_toolbar.css.scss */
 .toolbar-action button,
 .toolbar-action input[type="button"], .toolbar-action input[type="reset"], .toolbar-action input[type="submit"] {
-  width: 48px;
-  padding: 12px;
+  width: 3em;
+  padding: 0.75em;
   min-width: 0; }
 
 /* line 20, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_toolbar.css.scss */
 .toolbar-title {
-  padding: 12px 20px;
+  padding: 0.75em 1.25em;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   box-flex: 1;
@@ -2809,11 +2856,7 @@ textarea {
   -ms-flex: 1;
   flex: 1; }
 
-/* line 1, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_right-nav.css.scss */
-body.noscroll {
-  overflow: hidden; }
-
-/* line 5, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_right-nav.css.scss */
+/* line 1, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_left-nav.css.scss */
 .left-nav-mask {
   position: fixed;
   top: 0;
@@ -2827,13 +2870,14 @@ body.noscroll {
   -moz-transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
   transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out; }
 
-/* line 17, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_right-nav.css.scss */
+/* line 13, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_left-nav.css.scss */
 .left-nav-drawer {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  right: 3.5em;
+  max-width: 19em;
   background: white;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   -moz-transition: -moz-transform 0.3s ease-in-out;
@@ -2844,13 +2888,13 @@ body.noscroll {
   -o-transform: translateX(-100%);
   transform: translateX(-100%); }
 
-/* line 29, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_right-nav.css.scss */
+/* line 26, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_left-nav.css.scss */
 .left-nav.active .left-nav-mask {
   visibility: visible;
   opacity: 1; }
-/* line 34, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_right-nav.css.scss */
+/* line 31, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_left-nav.css.scss */
 .left-nav.active .left-nav-drawer {
-  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0.0625em 0 0.0625em rgba(0, 0, 0, 0.25);
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
