@@ -15,7 +15,8 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: em(300);
+  right: em(56);
+  max-width: em(304);
   background: white;
   @include transition(transform 0.3s ease-in-out);
   @include transform(translateX(-100%));
