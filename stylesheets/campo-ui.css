@@ -2793,15 +2793,19 @@ textarea {
     content: "\f071";
     font-family: FontAwesome;
     float: right; }
-/* line 54, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+  /* line 53, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+  .input.error .input-message.no-icon:before {
+    content: ""; }
+/* line 58, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input.error .input-counter {
   color: #e51c23; }
 
-/* line 60, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 64, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input-message {
   font-size: 0.75em;
   line-height: 1em;
   margin-bottom: 1em;
+  min-height: 1em;
   color: #999;
   -webkit-transition: color 0.3s ease-in-out;
   -moz-transition: color 0.3s ease-in-out;
@@ -2812,16 +2816,13 @@ textarea {
     display: table;
     clear: both; }
 
-/* line 69, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 74, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input-counter {
+  float: right;
   font-size: 0.75em;
   line-height: 1em;
-  margin-bottom: 1em;
-  color: #999;
-  text-align: right;
-  -webkit-transition: color 0.3s ease-in-out;
-  -moz-transition: color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out; }
+  margin-left: 1em;
+  color: #999; }
 
 /* line 1, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_toolbar.css.scss */
 .toolbar {
