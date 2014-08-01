@@ -32,3 +32,44 @@ textarea {
 textarea {
   resize: vertical;
 }
+
+.input {
+  &.error {
+    #{$all-text-inputs},
+    textarea {
+      border-bottom-width: em(2);
+      border-bottom-color: $red;
+      margin-bottom: em(7);
+    }
+
+    .input-message {
+      color: $red;
+
+      &:before {
+        content: "\f071";
+        font-family: FontAwesome;
+        float: right;
+      }
+    }
+
+    .input-counter {
+      color: $red;
+    }
+  }
+}
+
+.input-message {
+  font-size: em(12);
+  line-height: 1em;
+  margin-bottom: 1em;
+  color: #999;
+  @include clearfix();
+}
+
+.input-counter {
+  font-size: em(12);
+  line-height: 1em;
+  margin-bottom: 1em;
+  color: #999;
+  text-align: right;
+}
