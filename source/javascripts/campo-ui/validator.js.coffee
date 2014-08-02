@@ -1,4 +1,4 @@
-class FormValidator
+class Validator
   constructor: (@form) ->
     # Disable html5 validate
     @form.attr('novalidate', 'novalidate')
@@ -93,10 +93,8 @@ class FormValidator
 $.fn.validate = ->
   this.each ->
     form = $(this)
-    if not form.data 'formValidator'
-      form.data 'formValidator', new FormValidator(form)
-    else
-      form.data 'formValidator'
+    if not form.data 'validator'
+      form.data 'validator', new Validator(form)
   this
 
 $ ->
