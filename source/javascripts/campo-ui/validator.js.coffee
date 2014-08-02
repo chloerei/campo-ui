@@ -53,23 +53,21 @@ class Validator
 
   valid: ->
     @validateForm()
-    $.grep(@inputs, (element) -> $(element).data('validate-message')).length == 0
+    $.grep(@inputs, (element) -> $(element).data('errors').length ).length == 0
 
   validateInput: (input) ->
     if validators = input.data('validators')
-      input.data('validate-message', null)
+      input.data('errors', [])
 
       $.each validators, (index, validator) ->
-        if message = validator.validate(input)
-          input.data('validate-message', message)
-          false
+        validator.validate(input)
 
       input.data('validated', true)
 
       # update message
-      if input.data('validate-message')
+      if input.data('errors').length
         input.closest('.input').addClass('error')
-        input.siblings('.input-message').text(input.data('validate-message'))
+        input.siblings('.input-message').text(input.data('errors')[0])
       else
         input.closest('.input').removeClass('error')
         input.siblings('.input-message').text('')
@@ -83,7 +81,7 @@ class Validator
       # excute validate. return null if valid, otherwise return message.
       validate: (input) ->
         if input.val().trim().length is 0
-          input.data('required-message') || "Can't be blank."
+          input.data('errors').push "Can't be blank."
 
     maxlength:
       match: (input) ->
@@ -106,7 +104,7 @@ class Validator
 
       validate: (input) ->
         if input.val().length > input.data('maxlength')
-          input.data('maxlength-message') || "Can't over #{input.data('maxlength')} Character."
+          input.data('errors').push "Can't over #{input.data('maxlength')} Character."
 
     number:
       match: (input) ->
@@ -117,13 +115,13 @@ class Validator
           return
 
         unless /^-?\d+(\.\d+)?$/.test input.val()
-          return input.data('number-message') || "Should be a number."
+          input.data('errors').push "Should be a number."
 
         if input.attr('max') and parseFloat(input.val()) > parseFloat(input.attr('max'))
-          return input.data('number-max-message') || "Should less than #{input.attr('max')}."
+          input.data('errors').push "Should less than #{input.attr('max')}."
 
         if input.attr('min') and parseFloat(input.val()) < parseFloat(input.attr('min'))
-          return input.data('number-max-message') || "Should larger than #{input.attr('min')}."
+          input.data('errors').push "Should larger than #{input.attr('min')}."
 
     patten:
       match: (input) ->
@@ -135,7 +133,7 @@ class Validator
 
         patten = new RegExp("^#{input.attr('patten')}$")
         unless patten.test input.val()
-          return input.data('patten-message') || "Should match #{input.attr('patten')}."
+          input.data('errors').push "Should match #{input.attr('patten')}."
 
     email:
       match: (input) ->
@@ -146,7 +144,7 @@ class Validator
           return
 
         unless /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test input.val()
-          return input.data('patten-email') || "Should be a email."
+          input.data('errors').push "Should be a Email."
 
 $.fn.validate = ->
   this.each ->
