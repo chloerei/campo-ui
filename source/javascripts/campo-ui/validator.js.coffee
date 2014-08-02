@@ -36,41 +36,43 @@ class Validator
     input.closest('.input').append(message)
 
   bindEvents: ->
-    _validateInput = @validateInput
+    validator = this
     @form.on 'input', 'input, select, textarea', ->
-      _validateInput $(this)
+      validator.validateInput $(this)
 
     @form.on 'submit', (event) =>
       if not @valid()
         event.preventDefault()
 
   validateForm: ->
-    _validateInput = @validateInput
+    validator = this
     @inputs.each ->
       input = $(this)
       if not input.data('validated')
-        _validateInput(input)
+        validator.validateInput(input)
 
   valid: ->
     @validateForm()
     $.grep(@inputs, (element) -> $(element).data('errors').length ).length == 0
 
   validateInput: (input) ->
+    formValidator = this
     if validators = input.data('validators')
       input.data('errors', [])
 
       $.each validators, (index, validator) ->
-        validator.validate(input)
+        validator.validate.call(formValidator, input)
 
       input.data('validated', true)
+      @showInputError(input)
 
-      # update message
-      if input.data('errors').length
-        input.closest('.input').addClass('error')
-        input.siblings('.input-message').text(input.data('errors')[0])
-      else
-        input.closest('.input').removeClass('error')
-        input.siblings('.input-message').text('')
+  showInputError: (input) ->
+    if input.data('errors').length
+      input.closest('.input').addClass('error')
+      input.siblings('.input-message').text(input.data('errors')[0])
+    else
+      input.closest('.input').removeClass('error')
+      input.siblings('.input-message').text('')
 
   validators:
     required:
@@ -145,6 +147,33 @@ class Validator
 
         unless /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test input.val()
           input.data('errors').push "Should be a Email."
+
+    remote:
+      match: (input) ->
+        input.data('validate-remote')
+
+      validate: (input) ->
+        if input.val() is '' and input[0].validity.valid
+          return
+
+        validator = this
+        input.data('validate-remote-ajax')?.abort()
+        data = {}
+        data[input.attr('name')] = input.val()
+
+        ajax = $.ajax
+          url: input.data('validate-remote')
+          dataType: 'json'
+          data: data
+          success: (data) ->
+            if !data.valid
+              input.data('errors').push data.message
+          error: (xhr, status) ->
+            input.data('errors').push status
+          complete: ->
+            validator.showInputError(input)
+
+        input.data 'validate-remote-ajax', ajax
 
 $.fn.validate = ->
   this.each ->
