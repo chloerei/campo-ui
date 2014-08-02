@@ -113,6 +113,9 @@ class Validator
         input.attr('type') is 'number'
 
       validate: (input) ->
+        if input.val() is '' and input[0].validity.valid
+          return
+
         unless /^-?\d+(\.\d+)?$/.test input.val()
           return input.data('number-message') || "Should be a number."
 
@@ -127,6 +130,9 @@ class Validator
         input.attr('patten')
 
       validate: (input) ->
+        if input.val() is '' and input[0].validity.valid
+          return
+
         patten = new RegExp("^#{input.attr('patten')}$")
         unless patten.test input.val()
           return input.data('patten-message') || "Should match #{input.attr('patten')}."
@@ -136,6 +142,9 @@ class Validator
         input.attr('type') is 'email'
 
       validate: (input) ->
+        if input.val() is '' and input[0].validity.valid
+          return
+
         unless /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test input.val()
           return input.data('patten-email') || "Should be a email."
 
