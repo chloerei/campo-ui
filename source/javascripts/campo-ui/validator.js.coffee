@@ -131,6 +131,14 @@ class Validator
         unless patten.test input.val()
           return input.data('patten-message') || "Should match #{input.attr('patten')}."
 
+    email:
+      match: (input) ->
+        input.attr('type') is 'email'
+
+      validate: (input) ->
+        unless /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test input.val()
+          return input.data('patten-email') || "Should be a email."
+
 $.fn.validate = ->
   this.each ->
     form = $(this)
