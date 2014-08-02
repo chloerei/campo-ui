@@ -122,6 +122,15 @@ class Validator
         if input.attr('min') and parseFloat(input.val()) < parseFloat(input.attr('min'))
           return input.data('number-max-message') || "Should larger than #{input.attr('min')}."
 
+    patten:
+      match: (input) ->
+        input.attr('patten')
+
+      validate: (input) ->
+        patten = new RegExp("^#{input.attr('patten')}$")
+        unless patten.test input.val()
+          return input.data('patten-message') || "Should match #{input.attr('patten')}."
+
 $.fn.validate = ->
   this.each ->
     form = $(this)
