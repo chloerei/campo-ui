@@ -55,6 +55,20 @@ textarea {
       color: $red;
     }
   }
+
+  &.pending {
+    .input-message {
+      color: $blue;
+
+      &:before {
+        content: "\f1ce";
+        font-family: FontAwesome;
+        float: right;
+        @include animation(spin 2s infinite linear);
+      }
+    }
+
+  }
 }
 
 .input-message {

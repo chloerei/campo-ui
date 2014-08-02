@@ -68,11 +68,15 @@ class Validator
 
   showInputError: (input) ->
     if input.data('errors').length
-      input.closest('.input').addClass('error')
+      input.closest('.input').removeClass('pending').addClass('error')
       input.siblings('.input-message').text(input.data('errors')[0])
     else
-      input.closest('.input').removeClass('error')
-      input.siblings('.input-message').text('')
+      if input.data('validate-remote-pending')
+        input.closest('.input').removeClass('error').addClass('pending')
+        input.siblings('.input-message').text('Checking...')
+      else
+        input.closest('.input').removeClass('error pending')
+        input.siblings('.input-message').text('')
 
   validators:
     required:
@@ -158,6 +162,7 @@ class Validator
 
         validator = this
         input.data('validate-remote-ajax')?.abort()
+        input.data('validate-remote-pending', true)
         data = {}
         data[input.attr('name')] = input.val()
 
@@ -171,6 +176,7 @@ class Validator
           error: (xhr, status) ->
             input.data('errors').push status
           complete: ->
+            input.data('validate-remote-pending', false)
             validator.showInputError(input)
 
         input.data 'validate-remote-ajax', ajax
