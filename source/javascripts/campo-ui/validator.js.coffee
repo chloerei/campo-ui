@@ -113,6 +113,20 @@ class Validator
         if input.val().length > input.data('maxlength')
           input.data('maxlength-message') || "Can't over #{input.data('maxlength')} Character."
 
+    number:
+      match: (input) ->
+        input.attr('type') is 'number'
+
+      validate: (input) ->
+        unless /^-?\d+(\.\d+)?$/.test input.val()
+          return input.data('number-message') || "Should be a number."
+
+        if input.attr('max') and parseFloat(input.val()) > parseFloat(input.attr('max'))
+          return input.data('number-max-message') || "Should less than #{input.attr('max')}."
+
+        if input.attr('min') and parseFloat(input.val()) < parseFloat(input.attr('min'))
+          return input.data('number-max-message') || "Should larger than #{input.attr('min')}."
+
 $.fn.validate = ->
   this.each ->
     form = $(this)
