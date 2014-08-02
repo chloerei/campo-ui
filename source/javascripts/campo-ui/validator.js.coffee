@@ -2,7 +2,7 @@ class Validator
   constructor: (@form) ->
     # Disable html5 validate
     @form.attr('novalidate', 'novalidate')
-    @inputs = @form.find('input, select, textare').not(':submit, :reset, :image, [disabled]')
+    @inputs = @form.find('input, select, textare').not(':submit, :reset, :image, [disabled], [formnovalidate]')
     @needValidation = false
 
     @installValidators()
