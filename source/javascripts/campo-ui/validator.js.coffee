@@ -4,35 +4,32 @@ class Validator
     @form.attr('novalidate', 'novalidate')
     @inputs = @form.find('input, select, textare').not(':submit, :reset, :image, [disabled]')
 
-    validators = @validators
+    @installValidators()
+    @bindEvents()
 
+  installValidators: ->
+    validators = @validators
+    prepareMessage = @prepareMessage
     @inputs.each ->
       input = $(this)
+      inputValidators = []
       # Install validators
       $.each validators, (name, validator) ->
         if validator.match(input)
-          if !input.data('validators')
-            input.data('validators', [])
-          input.data('validators').push validator
+          inputValidators.push validator
 
-      # Prepare message div
-      if input.data('validators')?.length
-        input.wrap("<div class='input'></div>")
-        message = $("<div class='input-message'></div>")
-        input.after(message)
+          if validator.install
+            validator.install(input)
 
-        if maxlength = input.attr('maxlength')
-          input.attr('maxlength', null)
-          input.data('maxlength', maxlength)
-          message.addClass('no-icon')
-          count = input.val().length
-          counter = $("<div class='input-counter'>#{count} / #{maxlength}</div>")
-          message.before(counter)
+      if inputValidators.length
+        input.data('validators', inputValidators)
+        prepareMessage(input)
 
-          input.on 'input', ->
-            count = input.val().length
-            counter.text("#{count} / #{maxlength}")
+  prepareMessage: (input) ->
+    message = $("<div class='input-message'></div>")
+    input.closest('.input').append(message)
 
+  bindEvents: ->
     _validateInput = @validateInput
     @form.on 'input', 'input, select, textarea', ->
       _validateInput $(this)
@@ -86,6 +83,21 @@ class Validator
       match: (input) ->
         input.attr('maxlength')
 
+      install: (input) ->
+        # Desiable html5 validator
+        maxlength = input.attr('maxlength')
+        input.attr('maxlength', null)
+        input.data('maxlength', maxlength)
+
+        # Install counter
+        count = input.val().length
+        counter = $("<div class='input-counter'>#{count} / #{maxlength}</div>")
+        input.after(counter)
+
+        input.on 'input', ->
+          count = input.val().length
+          counter.text("#{count} / #{maxlength}")
+
       validate: (input) ->
         if input.val().length > input.data('maxlength')
           input.data('maxlength-message') || "Can't over #{input.data('maxlength')} Character."
@@ -95,7 +107,6 @@ $.fn.validate = ->
     form = $(this)
     if not form.data 'validator'
       form.data 'validator', new Validator(form)
-  this
 
 $ ->
   $('form:not([novalidate])').validate()

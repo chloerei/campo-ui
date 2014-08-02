@@ -196,12 +196,16 @@ title: Welcome to Middleman
       h3 validate
 
       form
-        input type="text" required=true placeholder="Required Input"
+        .input
+          input type="text" required=true placeholder="Required Input"
 
-        input type="number" required=true placeholder="Number Input"
+        .input
+          input type="number" required=true placeholder="Number Input"
 
-        input type="text" maxlength="30" placeholder="Maxlength Input"
+        .input
+          input type="text" maxlength="30" placeholder="Maxlength Input"
 
-        input type="text" required=true maxlength="30" placeholder="Required and Maxlength Input"
+        .input
+          input type="text" required=true maxlength="30" placeholder="Required and Maxlength Input"
 
         button.button-raised type="submit" Submit
