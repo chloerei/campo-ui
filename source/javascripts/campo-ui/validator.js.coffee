@@ -80,11 +80,6 @@ class Validator
       match: (input) ->
         input.attr('required')
 
-      install: (input) ->
-        # Disable html5 validator
-        input.attr('required', null)
-        input.data('required', true)
-
       # excute validate. return null if valid, otherwise return message.
       validate: (input) ->
         if input.val().trim().length is 0
