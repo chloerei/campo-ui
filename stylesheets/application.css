@@ -2793,14 +2793,22 @@ textarea {
     content: "\f071";
     font-family: FontAwesome;
     float: right; }
-  /* line 53, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
-  .input.error .input-message.no-icon:before {
-    content: ""; }
-/* line 58, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 54, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input.error .input-counter {
   color: #e51c23; }
+/* line 60, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+.input.pending .input-message {
+  color: #5677fc; }
+  /* line 63, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+  .input.pending .input-message:before {
+    content: "\f1ce";
+    font-family: FontAwesome;
+    float: right;
+    -webkit-animation: spin 2s infinite linear;
+    -moz-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear; }
 
-/* line 64, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 74, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input-message {
   font-size: 0.75em;
   line-height: 1em;
@@ -2816,7 +2824,7 @@ textarea {
     display: table;
     clear: both; }
 
-/* line 74, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 84, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input-counter {
   float: right;
   font-size: 0.75em;
