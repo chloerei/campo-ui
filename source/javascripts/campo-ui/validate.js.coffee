@@ -38,17 +38,18 @@ class FormValidator
       _validateInput $(this)
 
     @form.on 'submit', (event) =>
-      @validateForm()
-
-      if not @validatePass()
+      if not @valid()
         event.preventDefault()
 
   validateForm: ->
     _validateInput = @validateInput
     @inputs.each ->
-      _validateInput($(this))
+      input = $(this)
+      if not input.data('validated')
+        _validateInput(input)
 
-  validatePass: ->
+  valid: ->
+    @validateForm()
     $.grep(@inputs, (element) -> $(element).data('validate-message')).length == 0
 
   validateInput: (input) ->
@@ -59,6 +60,8 @@ class FormValidator
         if message = validator.validate(input)
           input.data('validate-message', message)
           false
+
+      input.data('validated', true)
 
       # update message
       if input.data('validate-message')
