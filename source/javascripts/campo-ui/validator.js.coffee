@@ -74,6 +74,11 @@ class Validator
       match: (input) ->
         input.attr('required')
 
+      install: (input) ->
+        # Disable html5 validator
+        input.attr('required', null)
+        input.data('required', true)
+
       # excute validate. return null if valid, otherwise return message.
       validate: (input) ->
         if input.val().trim().length is 0
@@ -84,7 +89,7 @@ class Validator
         input.attr('maxlength')
 
       install: (input) ->
-        # Desiable html5 validator
+        # Disable html5 validator
         maxlength = input.attr('maxlength')
         input.attr('maxlength', null)
         input.data('maxlength', maxlength)
