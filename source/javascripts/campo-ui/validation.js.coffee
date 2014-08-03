@@ -112,7 +112,7 @@ $.extend Validation,
       # excute validate. return null if valid, otherwise return message.
       validate: (input) ->
         if input.val().trim().length is 0
-          input.data('validation-errors').push Validation.messages.required
+          input.data('validation-errors').push input.data('validation-message-required') || Validation.messages.required
 
     maxlength:
       match: (input) ->
@@ -135,7 +135,7 @@ $.extend Validation,
 
       validate: (input) ->
         if input.val().length > input.data('validation-maxlength')
-          input.data('validation-errors').push Validation.messages.maxlength(input.data('validation-maxlength'))
+          input.data('validation-errors').push input.data('validation-message-maxlength') || Validation.messages.maxlength(input.data('validation-maxlength'))
 
     number:
       match: (input) ->
@@ -146,13 +146,13 @@ $.extend Validation,
           return
 
         unless /^-?\d+(\.\d+)?$/.test input.val()
-          input.data('validation-errors').push Validation.messages.number
+          input.data('validation-errors').push input.data('validation-message-number') || Validation.messages.number
 
         if input.attr('max') and parseFloat(input.val()) > parseFloat(input.attr('max'))
-          input.data('validation-errors').push Validation.messages.max(input.attr('max'))
+          input.data('validation-errors').push input.data('validation-message-max') || Validation.messages.max(input.attr('max'))
 
         if input.attr('min') and parseFloat(input.val()) < parseFloat(input.attr('min'))
-          input.data('validation-errors').push Validation.messages.min(input.attr('min'))
+          input.data('validation-errors').push input.data('validation-message-min') || Validation.messages.min(input.attr('min'))
 
     patten:
       match: (input) ->
@@ -164,7 +164,7 @@ $.extend Validation,
 
         patten = new RegExp("^#{input.attr('patten')}$")
         unless patten.test input.val()
-          input.data('validation-errors').push Validation.messages.patten(input.attr('patten'))
+          input.data('validation-errors').push input.data('validation-message-patten') || Validation.messages.patten(input.attr('patten'))
 
     email:
       match: (input) ->
@@ -175,7 +175,7 @@ $.extend Validation,
           return
 
         unless /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test input.val()
-          input.data('validation-errors').push Validation.messages.email
+          input.data('validation-errors').push input.data('validation-message-email') || Validation.messages.email
 
     remote:
       match: (input) ->
