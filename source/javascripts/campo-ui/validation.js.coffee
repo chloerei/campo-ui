@@ -3,32 +3,30 @@ class Validation
     # Disable html5 validate
     @form.attr('novalidate', 'novalidate')
     @inputs = @form.find('input, select, textare').not(':submit, :reset, :image, [disabled], [formnovalidate]')
-    @needValidation = false
 
     @installValidators()
-    @bindEvents() if @needValidation
+    @bindEvents() if @willValidate()
 
   installValidators: ->
     prepareMessage = @prepareMessage
-    needValidation = false
 
     @inputs.each ->
       input = $(this)
-      inputValidators = []
+      validators = []
       # Install validators
       $.each Validation.validators, (name, validator) ->
         if validator.match(input)
-          inputValidators.push validator
+          validators.push validator
 
           if validator.install
             validator.install(input)
 
-      if inputValidators.length
-        needValidation = true
-        input.data('validators', inputValidators)
+      if validators.length
+        input.data 'validators', validators
         prepareMessage(input)
 
-    @needValidation = needValidation
+  willValidate: ->
+    $.grep(@inputs, (element) -> $(element).data('validators').length ).length > 0
 
   prepareMessage: (input) ->
     message = $("<div class='input-message'></div>")
@@ -36,11 +34,12 @@ class Validation
 
   bindEvents: ->
     validation = this
+
     @form.on 'input', 'input, select, textarea', ->
       validation.validateInput $(this)
 
-    @form.on 'submit', (event) =>
-      if not @valid()
+    @form.on 'submit', (event) ->
+      if not validation.valid()
         event.preventDefault()
 
     @form.on 'invalid.validator', 'input, select, textarea', ->
