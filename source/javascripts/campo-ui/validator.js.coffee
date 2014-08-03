@@ -1,4 +1,4 @@
-class Validator
+class Validation
   constructor: (@form) ->
     # Disable html5 validate
     @form.attr('novalidate', 'novalidate')
@@ -9,7 +9,6 @@ class Validator
     @bindEvents() if @needValidation
 
   installValidators: ->
-    validators = @validators
     prepareMessage = @prepareMessage
     needValidation = false
 
@@ -17,7 +16,7 @@ class Validator
       input = $(this)
       inputValidators = []
       # Install validators
-      $.each validators, (name, validator) ->
+      $.each Validation.validators, (name, validator) ->
         if validator.match(input)
           inputValidators.push validator
 
@@ -36,41 +35,40 @@ class Validator
     input.closest('.input').append(message)
 
   bindEvents: ->
-    validator = this
+    validation = this
     @form.on 'input', 'input, select, textarea', ->
-      validator.validateInput $(this)
+      validation.validateInput $(this)
 
     @form.on 'submit', (event) =>
       if not @valid()
         event.preventDefault()
 
     @form.on 'invalid.validator', 'input, select, textarea', ->
-      validator.showInputInvalid($(this))
+      validation.showInputInvalid($(this))
 
     @form.on 'pending.validator', 'input, select, textarea', ->
-      validator.showInputPending($(this))
+      validation.showInputPending($(this))
 
     @form.on 'valid.validator', 'input, select, textarea', ->
-      validator.showInputValid($(this))
+      validation.showInputValid($(this))
 
-  validateForm: ->
-    validator = this
+  validate: ->
+    validation = this
     @inputs.each ->
       input = $(this)
       if not input.data('validated')
-        validator.validateInput(input)
+        validation.validateInput(input)
 
   valid: ->
-    @validateForm()
+    @validate()
     $.grep(@inputs, (element) -> $(element).data('errors').length ).length == 0
 
   validateInput: (input) ->
-    formValidator = this
     if validators = input.data('validators')
       input.data('errors', [])
 
       $.each validators, (index, validator) ->
-        validator.validate.call(formValidator, input)
+        validator.validate(input)
 
       input.data('validated', true)
 
@@ -94,6 +92,7 @@ class Validator
     input.closest('.input').removeClass('error pending')
     input.siblings('.input-message').text('')
 
+$.extend Validation,
   validators:
     required:
       # check whether input need this validator
@@ -202,8 +201,8 @@ class Validator
 $.fn.validate = ->
   this.each ->
     form = $(this)
-    if not form.data 'validator'
-      form.data 'validator', new Validator(form)
+    if not form.data 'validation'
+      form.data 'validation', new Validation(form)
 
 $ ->
   $('form:not([novalidate])').validate()
