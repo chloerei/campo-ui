@@ -92,6 +92,15 @@ class Validation
     input.siblings('.input-message').text('')
 
 $.extend Validation,
+  messages:
+    required: 'This field is requird.'
+    maxlength: (count) -> "Please enter no more than #{count} characters."
+    number: 'Please enter a valid number.'
+    max: (max) -> "Please enter a value less than or equal to #{max}."
+    min: (min) -> "Please enter a value greater than or equal to #{min}."
+    email: 'Please enter a valid email address.',
+    patten: (patten) -> "Please enter a value match patten: #{patten}.",
+
   validators:
     required:
       # check whether input need this validator
@@ -101,7 +110,7 @@ $.extend Validation,
       # excute validate. return null if valid, otherwise return message.
       validate: (input) ->
         if input.val().trim().length is 0
-          input.data('errors').push "Can't be blank."
+          input.data('errors').push Validation.messages.required
 
     maxlength:
       match: (input) ->
@@ -124,7 +133,7 @@ $.extend Validation,
 
       validate: (input) ->
         if input.val().length > input.data('maxlength')
-          input.data('errors').push "Can't over #{input.data('maxlength')} Character."
+          input.data('errors').push Validation.messages.maxlength(input.data('maxlength'))
 
     number:
       match: (input) ->
@@ -135,13 +144,13 @@ $.extend Validation,
           return
 
         unless /^-?\d+(\.\d+)?$/.test input.val()
-          input.data('errors').push "Should be a number."
+          input.data('errors').push Validation.messages.number
 
         if input.attr('max') and parseFloat(input.val()) > parseFloat(input.attr('max'))
-          input.data('errors').push "Should less than #{input.attr('max')}."
+          input.data('errors').push Validation.messages.max(input.attr('max'))
 
         if input.attr('min') and parseFloat(input.val()) < parseFloat(input.attr('min'))
-          input.data('errors').push "Should larger than #{input.attr('min')}."
+          input.data('errors').push Validation.messages.min(input.attr('min'))
 
     patten:
       match: (input) ->
@@ -153,7 +162,7 @@ $.extend Validation,
 
         patten = new RegExp("^#{input.attr('patten')}$")
         unless patten.test input.val()
-          input.data('errors').push "Should match #{input.attr('patten')}."
+          input.data('errors').push Validation.messages.patten(input.attr('patten'))
 
     email:
       match: (input) ->
@@ -164,7 +173,7 @@ $.extend Validation,
           return
 
         unless /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test input.val()
-          input.data('errors').push "Should be a Email."
+          input.data('errors').push Validation.messages.email
 
     remote:
       match: (input) ->
