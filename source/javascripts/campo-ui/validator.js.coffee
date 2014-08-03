@@ -44,6 +44,15 @@ class Validator
       if not @valid()
         event.preventDefault()
 
+    @form.on 'invalid.validator', 'input, select, textarea', ->
+      validator.showInputInvalid($(this))
+
+    @form.on 'pending.validator', 'input, select, textarea', ->
+      validator.showInputPending($(this))
+
+    @form.on 'valid.validator', 'input, select, textarea', ->
+      validator.showInputValid($(this))
+
   validateForm: ->
     validator = this
     @inputs.each ->
@@ -64,19 +73,26 @@ class Validator
         validator.validate.call(formValidator, input)
 
       input.data('validated', true)
-      @showInputError(input)
 
-  showInputError: (input) ->
-    if input.data('errors').length
-      input.closest('.input').removeClass('pending').addClass('error')
-      input.siblings('.input-message').text(input.data('errors')[0])
-    else
-      if input.data('validate-remote-pending')
-        input.closest('.input').removeClass('error').addClass('pending')
-        input.siblings('.input-message').text('Checking...')
+      if input.data('errors').length
+        input.trigger('invalid.validator')
       else
-        input.closest('.input').removeClass('error pending')
-        input.siblings('.input-message').text('')
+        if input.data('validate-remote-pending')
+          input.trigger('pending.validator')
+        else
+          input.trigger('valid.validator')
+
+  showInputInvalid: (input) ->
+    input.closest('.input').removeClass('pending').addClass('error')
+    input.siblings('.input-message').text(input.data('errors')[0])
+
+  showInputPending: (input) ->
+    input.closest('.input').removeClass('error').addClass('pending')
+    input.siblings('.input-message').text('Checking...')
+
+  showInputValid: (input) ->
+    input.closest('.input').removeClass('error pending')
+    input.siblings('.input-message').text('')
 
   validators:
     required:
@@ -160,7 +176,6 @@ class Validator
         if input.val() is '' and input[0].validity.valid
           return
 
-        validator = this
         input.data('validate-remote-ajax')?.abort()
         input.data('validate-remote-pending', true)
         data = {}
@@ -177,7 +192,10 @@ class Validator
             input.data('errors').push status
           complete: ->
             input.data('validate-remote-pending', false)
-            validator.showInputError(input)
+            if input.data('errors').length
+              input.trigger('invalid.validator')
+            else
+              input.trigger('valid.validator')
 
         input.data 'validate-remote-ajax', ajax
 
