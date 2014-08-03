@@ -60,7 +60,9 @@ class Validation
 
   valid: ->
     @validate()
-    $.grep(@inputs, (element) -> $(element).data('errors').length ).length == 0
+    $.grep(@inputs, (element) ->
+      $(element).data('errors').length or $(element).data('validate-reote-pending')
+    ).length == 0
 
   validateInput: (input) ->
     if validators = input.data('validators')
