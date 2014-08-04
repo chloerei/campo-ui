@@ -1,6 +1,7 @@
 #{$all-text-inputs},
 textarea {
-  padding: em(16) 0 em(7);
+  line-height: em(24);
+  padding: em(12) 0 em(3);
   border-top: none;
   border-left: none;
   border-right: none;
@@ -21,11 +22,6 @@ textarea {
     background: transparent;
     border-bottom-style: dashed;
   }
-}
-
-#{$all-text-inputs} {
-  @include box-sizing(content-box);
-  height: 1em;
 }
 
 textarea {
