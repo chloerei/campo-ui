@@ -2443,7 +2443,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-size: 1em;
   line-height: 1.5em;
-  margin: 0.75em 0; }
+  margin: 1.5em 0 0.5em; }
 
 /* line 15, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_typography.css.scss */
 h1 {
@@ -2744,7 +2744,8 @@ input[type="button"], input[type="reset"], input[type="submit"] {
 /* line 1, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
 textarea {
-  padding: 1em 0 0.4375em;
+  line-height: 1.5em;
+  padding: 0.75em 0 0.1875em;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -2755,51 +2756,44 @@ textarea {
   -webkit-transition: border-color 0.3s ease-in-out;
   -moz-transition: border-color 0.3s ease-in-out;
   transition: border-color 0.3s ease-in-out; }
-  /* line 13, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+  /* line 14, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
   input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
   textarea:focus {
     border-bottom-width: 0.125em;
     border-bottom-color: #5677fc;
     margin-bottom: 0.4375em;
     outline: none; }
-  /* line 20, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+  /* line 21, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
   input[type="email"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="url"]:disabled, input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="month"]:disabled, input[type="time"]:disabled, input[type="week"]:disabled,
   textarea:disabled {
     background: transparent;
     border-bottom-style: dashed; }
 
-/* line 26, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"] {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 1em; }
-
-/* line 31, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 27, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 textarea {
   resize: vertical; }
 
-/* line 37, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 33, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input.error input[type="email"], .input.error input[type="number"], .input.error input[type="password"], .input.error input[type="search"], .input.error input[type="tel"], .input.error input[type="text"], .input.error input[type="url"], .input.error input[type="color"], .input.error input[type="date"], .input.error input[type="datetime"], .input.error input[type="datetime-local"], .input.error input[type="month"], .input.error input[type="time"], .input.error input[type="week"],
 .input.error textarea {
   border-bottom-width: 0.125em;
   border-bottom-color: #e51c23;
   margin-bottom: 0.4375em; }
-/* line 44, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 40, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input.error .input-message {
   color: #e51c23; }
-  /* line 47, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+  /* line 43, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
   .input.error .input-message:before {
     content: "\f071";
     font-family: FontAwesome;
     float: right; }
-/* line 54, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 50, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input.error .input-counter {
   color: #e51c23; }
-/* line 60, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 56, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input.pending .input-message {
   color: #5677fc; }
-  /* line 63, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+  /* line 59, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
   .input.pending .input-message:before {
     content: "\f1ce";
     font-family: FontAwesome;
@@ -2808,7 +2802,7 @@ textarea {
     -moz-animation: spin 2s infinite linear;
     animation: spin 2s infinite linear; }
 
-/* line 74, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 70, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input-message {
   font-size: 0.75em;
   line-height: 1em;
@@ -2824,7 +2818,7 @@ textarea {
     display: table;
     clear: both; }
 
-/* line 84, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
+/* line 80, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_form.css.scss */
 .input-counter {
   float: right;
   font-size: 0.75em;
