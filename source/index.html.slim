@@ -246,8 +246,24 @@ title: Welcome to Middleman
         .example-container
           .card
             .card-header
-              h3.card-header-title
+              .card-title
                 | Card header title
+            .card-content
+              | Card content
+            .card-actions
+              .pull-left
+                button.button-icon
+                  i.fa.fa-heart
+              .pull-right
+                button.button-flat
+                  | Button One
+                button.button-flat.button-blue
+                  | Button Two
+          .card
+            .card-media
+              .card-title
+                | Card header title
+              = image_tag 'picture.jpg'
             .card-content
               | Card content
             .card-actions

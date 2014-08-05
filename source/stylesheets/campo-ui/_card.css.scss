@@ -12,16 +12,47 @@
 
 .card-header {
   padding: em(16);
+  display: block;
 }
 
-.card-header-title {
+.card-title {
   margin: 0;
-  font: em(24);
+  font-size: em(24);
   line-height: 1em;
 }
 
+.card-media {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+
+  img {
+    max-width: 100%;
+  }
+
+  .card-title {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    color: white;
+  }
+
+  &:first-child {
+    img {
+      border-radius: em(2) em(2) 0 0;
+    }
+  }
+}
+
 .card-content {
+  display: block;
   padding: em(16);
+}
+
+.card-header + .card-content {
+  padding-top: 0;
 }
 
 .card-actions {
