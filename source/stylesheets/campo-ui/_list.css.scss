@@ -3,8 +3,11 @@
 }
 
 .list-item {
+  display: block;
   padding: em(16);
   line-height: em(16);
+  text-decoration: none;
+  color: #333;
 
   &.active {
     color: $blue;
