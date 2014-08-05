@@ -10,3 +10,13 @@
 .post {
   padding: em(16);
 }
+
+.example {
+  background: #eee;
+  overflow: hidden;
+
+  .example-container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}

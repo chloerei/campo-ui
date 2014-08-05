@@ -9,7 +9,7 @@ textarea {
   margin: 0 0 em(8);
   display: block;
   width: 100%;
-  @include transition(border-color 0.3s ease-in-out);
+  @include transition(border-color 0.15s ease-in-out);
 
   &:focus {
     border-bottom-width: em(2);
@@ -74,7 +74,7 @@ textarea {
   min-height: 1em;
   color: #999;
   @include clearfix();
-  @include transition(color 0.3s ease-in-out);
+  @include transition(color 0.15s ease-in-out);
 }
 
 .input-counter {
