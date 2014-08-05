@@ -4,11 +4,8 @@ title: Welcome to Middleman
 
 .toolbar.app-bar
   .toolbar-action
-    .left-nav
-      button.left-nav-toggle
-        i.fa.fa-bars
-      .left-nav-mask
-      .left-nav-drawer
+    button data-toggle="left-nav" data-target="#left-nav"
+      i.fa.fa-bars
   .toolbar-title
     | Campo UI
   .toolbar-action
@@ -20,6 +17,9 @@ title: Welcome to Middleman
   .toolbar-action
     button
       i.fa.fa-ellipsis-v
+
+#left-nav.left-nav
+  .left-nav-drawer
 
 .main
   .container
