@@ -224,3 +224,15 @@ title: Welcome to Middleman
           input type="number" formnovalidate=true placeholder="Disable validate by attr formnovalidate"
 
         button.button-raised type="submit" Submit
+
+      hr
+      h2 Compnonts
+
+      h3 Single-line list
+
+      .list
+        .list-item.active
+          | List item text.
+        - 2.times do
+          .list-item
+            | List item text.

@@ -1,0 +1,12 @@
+.list {
+  padding: em(8) 0;
+}
+
+.list-item {
+  padding: em(16);
+  line-height: em(16);
+
+  &.active {
+    color: $blue;
+  }
+}
