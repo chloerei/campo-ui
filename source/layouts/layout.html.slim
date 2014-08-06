@@ -36,6 +36,8 @@ html
           .list
             a.list-item href=url_for('/') class=('active' if current_page.url == '/')
               | Home
+            a.list-item href=url_for('/typography/') class=('active' if current_page.url == '/typography/')
+              | Typography
 
     .main
       .container
