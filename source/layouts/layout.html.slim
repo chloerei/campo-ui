@@ -34,9 +34,9 @@ html
             | Campo UI
         .left-nav-drawer-scrollable
           .list
-            a.list-item href=url_for('/') class=('active' if current_page.url == '/')
+            a.list-item href=url_for('index.html') class=('active' if current_page.path == 'index.html')
               | Home
-            a.list-item href=url_for('/typography/') class=('active' if current_page.url == '/typography/')
+            a.list-item href=url_for('typography.html') class=('active' if current_page.path == 'typography.html')
               | Typography
 
     .main
