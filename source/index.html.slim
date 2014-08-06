@@ -4,10 +4,10 @@ title: Welcome to Middleman
 
 .toolbar.app-bar
   .toolbar-action
-    button data-toggle="left-nav" data-target="#left-nav"
+    button.left-nav-toggle data-toggle="left-nav" data-target="#left-nav"
       i.fa.fa-bars
   .toolbar-title
-    | Campo UI
+    | Index
   .toolbar-action
     button
       i.fa.fa-search
@@ -20,14 +20,11 @@ title: Welcome to Middleman
 
 #left-nav.left-nav
   .left-nav-drawer
+    .toolbar.app-bar
+      .toolbar-title
+        | Campo UI
     .list
       = link_to 'Index', '/', class: 'list-item active'
-      a.list-item href='#'
-        | Nav item
-      a.list-item href='#'
-        | Nav item
-    .divider
-    .list
       a.list-item href='#'
         | Nav item
       a.list-item href='#'

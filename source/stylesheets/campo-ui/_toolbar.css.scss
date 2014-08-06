@@ -18,6 +18,10 @@
 }
 
 .toolbar-title {
-  padding: em(12) em(20);
+  padding: em(12);
   @include flex(1);
+}
+
+.toolbar-action + .toolbar-title {
+  padding: em(12) em(20);
 }
