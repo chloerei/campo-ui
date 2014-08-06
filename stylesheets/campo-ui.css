@@ -2693,16 +2693,17 @@ input[type="button"], input[type="reset"], input[type="submit"] {
 .button-icon {
   min-width: 0;
   color: #555;
+  height: 2.25em;
   width: 2.25em;
   border-radius: 1.125em; }
-  /* line 152, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
+  /* line 153, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-icon:active {
     background: rgba(153, 153, 153, 0.4); }
-  /* line 156, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
+  /* line 157, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-icon[disabled] {
     color: #999;
     background: none; }
-  /* line 161, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
+  /* line 162, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-icon.button-blue {
     color: #5677fc; }
     /* line 133, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
@@ -2712,7 +2713,7 @@ input[type="button"], input[type="reset"], input[type="submit"] {
     .button-icon.button-blue[disabled] {
       color: #999;
       background: none; }
-  /* line 165, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
+  /* line 166, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-icon.button-red {
     color: #e51c23; }
     /* line 133, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
@@ -2722,7 +2723,7 @@ input[type="button"], input[type="reset"], input[type="submit"] {
     .button-icon.button-red[disabled] {
       color: #999;
       background: none; }
-  /* line 169, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
+  /* line 170, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-icon.button-green {
     color: #259b24; }
     /* line 133, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
@@ -2732,7 +2733,7 @@ input[type="button"], input[type="reset"], input[type="submit"] {
     .button-icon.button-green[disabled] {
       color: #999;
       background: none; }
-  /* line 173, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
+  /* line 174, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-icon.button-yellow {
     color: #ffeb3b; }
     /* line 133, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
@@ -2742,7 +2743,7 @@ input[type="button"], input[type="reset"], input[type="submit"] {
     .button-icon.button-yellow[disabled] {
       color: #999;
       background: none; }
-  /* line 177, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
+  /* line 178, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-icon.button-teal {
     color: #009688; }
     /* line 133, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
@@ -2752,7 +2753,7 @@ input[type="button"], input[type="reset"], input[type="submit"] {
     .button-icon.button-teal[disabled] {
       color: #999;
       background: none; }
-  /* line 181, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
+  /* line 182, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
   .button-icon.button-purple {
     color: #9c27b0; }
     /* line 133, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_button.css.scss */
