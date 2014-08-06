@@ -23,7 +23,7 @@ body.with-fixed-toolbar {
 .toolbar-action {
   button,
   #{$all-button-inputs} {
-    width: em(48);
+    height: em(48);
     padding: em(16);
     min-width: 0;
   }
