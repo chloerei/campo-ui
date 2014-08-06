@@ -56,26 +56,26 @@
 }
 
 .card-actions {
-  padding: em(10) em(16);
+  padding: em(6) em(16);
   @include clearfix();
 
   .button-icon {
     &:first-child {
-      margin-left: -6px;
+      margin-left: -(em(10));
     }
 
     &:last-child {
-      margin-right: -6px;
+      margin-right: -(em(10));
     }
   }
 
   .button-flat {
     &:first-child {
-      margin-left: -12px;
+      margin-left: -(em(10));
     }
 
     &:last-child {
-      margin-right: -12px;
+      margin-right: -(em(10));
     }
   }
 }

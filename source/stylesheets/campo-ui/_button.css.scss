@@ -1,7 +1,8 @@
 button,
 #{$all-button-inputs} {
   background: transparent;
-  padding: em(6) em(12);
+  line-height: em(16);
+  padding: em(10);
   border: none;
   margin: 0;
   border-radius: em(2);
@@ -143,7 +144,6 @@ button,
   min-width: 0;
   color: #555;
   width: em(36);
-  padding: em(6);
   border-radius: em(18);
 
   &:hover {
