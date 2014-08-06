@@ -18,6 +18,7 @@
   right: em(56);
   max-width: em(304);
   background: white;
+  overflow: auto;
   @include transition(transform 0.3s ease-in-out);
   @include transform(translateX(-100%));
 }
@@ -34,12 +35,35 @@
   }
 }
 
+.left-nav.with-fixed-toolbar {
+  .toolbar-fixed {
+    left: 0;
+  }
+
+  .left-nav-drawer {
+    overflow: hidden;
+  }
+
+  .left-nav-drawer-scrollable {
+    position: absolute;
+    top: em(56);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+}
+
 @media screen and (min-width: $large-screen) {
   body.with-pinned-left-nav {
     float: left;
     padding-left: em(304);
     width: 100%;
     @include transition(padding 0.3s ease-in-out);
+
+    .toolbar-fixed {
+      left: em(304);
+    }
 
     .left-nav-toggle {
       display: none;

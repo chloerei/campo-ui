@@ -8,6 +8,18 @@
   }
 }
 
+.toolbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 em(1) em(1) rgba(0, 0, 0, 0.25);
+}
+
+body.with-fixed-toolbar {
+  margin-top: 56px;
+}
+
 .toolbar-action {
   button,
   #{$all-button-inputs} {

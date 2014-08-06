@@ -2,7 +2,7 @@
 title: Welcome to Middleman
 ---
 
-.toolbar.app-bar
+.toolbar.app-bar.toolbar-fixed
   .toolbar-action
     button.left-nav-toggle data-toggle="left-nav" data-target="#left-nav"
       i.fa.fa-bars
@@ -18,17 +18,17 @@ title: Welcome to Middleman
     button
       i.fa.fa-ellipsis-v
 
-#left-nav.left-nav
+#left-nav.left-nav.with-fixed-toolbar
   .left-nav-drawer
-    .toolbar.app-bar
+    .toolbar.app-bar.toolbar-fixed
       .toolbar-title
         | Campo UI
-    .list
-      = link_to 'Index', '/', class: 'list-item active'
-      a.list-item href='#'
-        | Nav item
-      a.list-item href='#'
-        | Nav item
+    .left-nav-drawer-scrollable
+      .list
+        = link_to 'Index', '/', class: 'list-item active'
+        - 30.times do
+          a.list-item href='#'
+            | Nav item
 
 .main
   .container
