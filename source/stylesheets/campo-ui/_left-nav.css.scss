@@ -37,7 +37,7 @@
 
 .left-nav.with-fixed-toolbar {
   .toolbar-fixed {
-    left: 0;
+    padding-left: em(4);
   }
 
   .left-nav-drawer {
@@ -62,11 +62,16 @@
     @include transition(padding 0.3s ease-in-out);
 
     .toolbar-fixed {
-      left: em(304);
+      padding-left: em(308);
+      @include transition(padding 0.3s ease-in-out);
     }
 
     .left-nav-toggle {
       display: none;
+    }
+
+    .toolbar-action + .toolbar-title {
+      padding-left: em(12);
     }
 
     .left-nav-drawer {
