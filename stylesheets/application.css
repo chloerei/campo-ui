@@ -2878,7 +2878,7 @@ body.with-fixed-toolbar {
 /* line 24, /media/data/workspace/campo-ui/source/stylesheets/campo-ui/_toolbar.css.scss */
 .toolbar-action button,
 .toolbar-action input[type="button"], .toolbar-action input[type="reset"], .toolbar-action input[type="submit"] {
-  width: 3em;
+  height: 3em;
   padding: 1em;
   min-width: 0; }
 
