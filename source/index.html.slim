@@ -1,285 +1,254 @@
 ---
-title: Welcome to Middleman
+title: Home
 ---
 
-.toolbar.app-bar.toolbar-fixed
-  .toolbar-action
-    button.left-nav-toggle data-toggle="left-nav" data-target="#left-nav"
-      i.fa.fa-bars
-  .toolbar-title
-    | Index
-  .toolbar-action
-    button
-      i.fa.fa-search
-  .toolbar-action
-    button
-      i.fa.fa-heart
-  .toolbar-action
-    button
-      i.fa.fa-ellipsis-v
+h2 Typography
 
-#left-nav.left-nav.with-fixed-toolbar
-  .left-nav-drawer
-    .toolbar.app-bar.toolbar-fixed
-      .toolbar-title
-        | Campo UI
-    .left-nav-drawer-scrollable
-      .list
-        = link_to 'Index', '/', class: 'list-item active'
-        - 30.times do
-          a.list-item href='#'
-            | Nav item
+h3 headings
 
-.main
-  .container
-    .post
-      h2 Typography
+hgroup
+  h1 H1.Heading
+  h2 H2.Heading
+  h3 H3.Heading
+  h4 H4.Heading
+  h5 H5.Heading
+  h6 H6.Heading
 
-      h3 headings
+hr
 
-      hgroup
-        h1 H1.Heading
-        h2 H2.Heading
-        h3 H3.Heading
-        h4 H4.Heading
-        h5 H5.Heading
-        h6 H6.Heading
+h3 Paragraph
 
-      hr
+p campo-ui is a ui toolkit for campo project.
+p campo-ui is a ui toolkit for campo project.
 
-      h3 Paragraph
+hr
 
-      p campo-ui is a ui toolkit for campo project.
-      p campo-ui is a ui toolkit for campo project.
+h3 Code, Pre
 
-      hr
+p
+  | This is inline code:
+  '
+  code puts "hello world"
 
-      h3 Code, Pre
+p And this is block code:
 
-      p
-        | This is inline code:
-        '
-        code puts "hello world"
+pre
+  code
+    | def hello
+        "hello world"
+      end
 
-      p And this is block code:
+hr
 
-      pre
-        code
-          | def hello
-              "hello world"
-            end
+h3 Blockquote
 
-      hr
+blockquote
+  p this is blockquote.
 
-      h3 Blockquote
+hr
 
-      blockquote
-        p this is blockquote.
+h3 List
 
-      hr
+ol
+  li Order List Item
+  li Order List Item
+  li Order List Item
 
-      h3 List
+ul
+  li Unorder List Item
+  li Unorder List Item
+  li Unorder List Item
 
-      ol
-        li Order List Item
-        li Order List Item
-        li Order List Item
+hr
 
-      ul
-        li Unorder List Item
-        li Unorder List Item
-        li Unorder List Item
+h2 Buttons
 
-      hr
+h3 Flat button
 
-      h2 Buttons
+button.button-flat
+  | Normal
+'
+button.button-flat disabled=true
+  | Disabled
+'
+button.button-flat.button-blue
+  | Blue
+'
+button.button-flat.button-red
+  | Red
+'
+button.button-flat.button-green
+  | Green
+'
+button.button-flat.button-yellow
+  | Yellow
+'
+button.button-flat.button-teal
+  | Teal
+'
+button.button-flat.button-purple
+  | Purple
+'
+button.button-flat.button-blue disabled=true
+  | Color Disabled
 
-      h3 Flat button
+h3 Raised button
 
-      button.button-flat
-        | Normal
-      '
-      button.button-flat disabled=true
-        | Disabled
-      '
-      button.button-flat.button-blue
-        | Blue
-      '
-      button.button-flat.button-red
-        | Red
-      '
-      button.button-flat.button-green
-        | Green
-      '
-      button.button-flat.button-yellow
-        | Yellow
-      '
-      button.button-flat.button-teal
-        | Teal
-      '
-      button.button-flat.button-purple
-        | Purple
-      '
-      button.button-flat.button-blue disabled=true
-        | Color Disabled
+button.button-raised
+  | Normal
+'
+button.button-raised disabled=true
+  | Disabled
+'
+button.button-raised.button-blue
+  | Blue
+'
+button.button-raised.button-red
+  | Red
+'
+button.button-raised.button-green
+  | Green
+'
+button.button-raised.button-yellow
+  | Yellow
+'
+button.button-raised.button-teal
+  | Teal
+'
+button.button-raised.button-purple
+  | Purple
+'
+button.button-raised.button-blue disabled=true
+  | Color Disabled
 
-      h3 Raised button
+h3 Icon button
 
-      button.button-raised
-        | Normal
-      '
-      button.button-raised disabled=true
-        | Disabled
-      '
-      button.button-raised.button-blue
-        | Blue
-      '
-      button.button-raised.button-red
-        | Red
-      '
-      button.button-raised.button-green
-        | Green
-      '
-      button.button-raised.button-yellow
-        | Yellow
-      '
-      button.button-raised.button-teal
-        | Teal
-      '
-      button.button-raised.button-purple
-        | Purple
-      '
-      button.button-raised.button-blue disabled=true
-        | Color Disabled
+button.button-icon
+  i.fa.fa-heart
+'
+button.button-icon disabled=true
+  i.fa.fa-heart
+'
+button.button-icon.button-blue
+  i.fa.fa-heart
+'
+button.button-icon.button-red
+  i.fa.fa-heart
+'
+button.button-icon.button-green
+  i.fa.fa-heart
+'
+button.button-icon.button-yellow
+  i.fa.fa-heart
+'
+button.button-icon.button-teal
+  i.fa.fa-heart
+'
+button.button-icon.button-purple
+  i.fa.fa-heart
+'
+button.button-icon.button-blue disabled=true
+  i.fa.fa-heart
 
-      h3 Icon button
+h3 Block button
 
-      button.button-icon
-        i.fa.fa-heart
-      '
-      button.button-icon disabled=true
-        i.fa.fa-heart
-      '
-      button.button-icon.button-blue
-        i.fa.fa-heart
-      '
-      button.button-icon.button-red
-        i.fa.fa-heart
-      '
-      button.button-icon.button-green
-        i.fa.fa-heart
-      '
-      button.button-icon.button-yellow
-        i.fa.fa-heart
-      '
-      button.button-icon.button-teal
-        i.fa.fa-heart
-      '
-      button.button-icon.button-purple
-        i.fa.fa-heart
-      '
-      button.button-icon.button-blue disabled=true
-        i.fa.fa-heart
+button.button-raised.button-block
+  | Block Button
 
-      h3 Block button
+hr
 
-      button.button-raised.button-block
-        | Block Button
+h2 Form
 
-      hr
+h3 Input Element
 
-      h2 Form
+input type="text" placeholder="Text Input"
 
-      h3 Input Element
+input type="number" placeholder="Number Input"
 
-      input type="text" placeholder="Text Input"
+input type="text" placeholder="Disabled Input" disabled=true
 
-      input type="number" placeholder="Number Input"
+textarea placeholder="Text Area" rows="3"
 
-      input type="text" placeholder="Disabled Input" disabled=true
+textarea placeholder="Disabled Text Area" rows="3" disabled=true
 
-      textarea placeholder="Text Area" rows="3"
+h3 Validation
 
-      textarea placeholder="Disabled Text Area" rows="3" disabled=true
+form
+  .input
+    input type="text" required=true placeholder="Required Input"
 
-      h3 Validation
+  .input
+    input type="text" required=true placeholder="Custom required message" data-validation-message-required="custom message"
 
-      form
-        .input
-          input type="text" required=true placeholder="Required Input"
+  .input
+    input type="number" max=10 min=0 placeholder="Number Input, less than 10 and larger than 0"
 
-        .input
-          input type="text" required=true placeholder="Custom required message" data-validation-message-required="custom message"
+  .input
+    input type="text" maxlength="30" placeholder="Maxlength Input"
 
-        .input
-          input type="number" max=10 min=0 placeholder="Number Input, less than 10 and larger than 0"
+  .input
+    input type="text" patten="\w+" placeholder="Patten: \w+"
 
-        .input
-          input type="text" maxlength="30" placeholder="Maxlength Input"
+  .input
+    input type="email" placeholder="Email"
 
-        .input
-          input type="text" patten="\w+" placeholder="Patten: \w+"
+  .input
+    input type="text" name="remote-input" data-validation-remote="/remote_validate.json" placeholder="Remote validate"
 
-        .input
-          input type="email" placeholder="Email"
+  .input
+    input type="text" required=true maxlength="30" placeholder="Required and Maxlength Input"
 
-        .input
-          input type="text" name="remote-input" data-validation-remote="/remote_validate.json" placeholder="Remote validate"
+  .inpu
+    input type="number" formnovalidate=true placeholder="Disable validate by attr formnovalidate"
 
-        .input
-          input type="text" required=true maxlength="30" placeholder="Required and Maxlength Input"
+  button.button-raised type="submit" Submit
 
-        .inpu
-          input type="number" formnovalidate=true placeholder="Disable validate by attr formnovalidate"
+hr
+h2 Compnonts
 
-        button.button-raised type="submit" Submit
+h3 Card
 
-      hr
-      h2 Compnonts
+.example
+  .example-container
+    .card
+      .card-header
+        .card-title
+          | Card header title
+      .card-content
+        | Card content
+      .card-actions
+        .pull-left
+          button.button-flat
+            | Button One
+          button.button-flat.button-blue
+            | Button Two
+        .pull-right
+          button.button-icon
+            i.fa.fa-heart
+    .card
+      .card-media
+        .card-title
+          | Card header title
+        = image_tag 'picture.jpg'
+      .card-content
+        | Card content
+      .card-actions
+        .pull-left
+          button.button-icon
+            i.fa.fa-heart
+        .pull-right
+          button.button-flat
+            | Button One
+          button.button-flat.button-blue
+            | Button Two
 
-      h3 Card
+hr
 
-      .example
-        .example-container
-          .card
-            .card-header
-              .card-title
-                | Card header title
-            .card-content
-              | Card content
-            .card-actions
-              .pull-left
-                button.button-flat
-                  | Button One
-                button.button-flat.button-blue
-                  | Button Two
-              .pull-right
-                button.button-icon
-                  i.fa.fa-heart
-          .card
-            .card-media
-              .card-title
-                | Card header title
-              = image_tag 'picture.jpg'
-            .card-content
-              | Card content
-            .card-actions
-              .pull-left
-                button.button-icon
-                  i.fa.fa-heart
-              .pull-right
-                button.button-flat
-                  | Button One
-                button.button-flat.button-blue
-                  | Button Two
+h3 Single-line list
 
-      hr
-
-      h3 Single-line list
-
-      .list
-        .list-item.active
-          | List item text.
-        - 2.times do
-          .list-item
-            | List item text.
+.list
+  .list-item.active
+    | List item text.
+  - 2.times do
+    .list-item
+      | List item text.
