@@ -12,8 +12,8 @@ html
     = javascript_include_tag 'http://code.jquery.com/jquery-2.1.1.min.js', 'application'
   body.with-pinned-left-nav.with-fixed-toolbar
     .toolbar.app-bar.toolbar-fixed
-      .toolbar-action
-        button.left-nav-toggle data-toggle="left-nav" data-target="#left-nav"
+      .toolbar-action.left-nav-toggle
+        button data-toggle="left-nav" data-target="#left-nav"
           i.fa.fa-bars
       .toolbar-title
         = current_page.data.title

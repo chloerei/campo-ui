@@ -1,10 +1,14 @@
 .toolbar {
-  padding: em(4);
+  padding: em(8) 0;
   @include display(flex);
 
   &.app-bar {
     background: $blue;
     color: white;
+  }
+
+  @media screen and (min-width: $large-screen) {
+    padding: em(12) em(8);
   }
 }
 
@@ -17,23 +21,26 @@
 }
 
 body.with-fixed-toolbar {
-  margin-top: 56px;
+  margin-top: em(56);
+
+  @media screen and (min-width: $large-screen) {
+    margin-top: em(64);
+  }
 }
 
 .toolbar-action {
+  margin: 0 em(8);
+
   button,
   #{$all-button-inputs} {
-    height: em(48);
-    padding: em(16);
+    padding: em(8);
     min-width: 0;
   }
 }
 
 .toolbar-title {
-  padding: em(12);
+  font-size: em(20);
+  padding: em(8, 20);
+  line-height: em(24, 20);
   @include flex(1);
-}
-
-.toolbar-action + .toolbar-title {
-  padding-left: em(20);
 }

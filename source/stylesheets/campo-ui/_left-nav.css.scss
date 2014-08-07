@@ -53,6 +53,10 @@
     right: 0;
     bottom: 0;
     overflow: auto;
+
+    @media screen and (min-width: $large-screen) {
+      top: em(64);
+    }
   }
 }
 
@@ -64,7 +68,7 @@
     @include transition(padding 0.3s ease-in-out);
 
     .toolbar-fixed {
-      padding-left: em(308);
+      padding-left: em(304);
       @include transition(padding 0.3s ease-in-out);
     }
 
@@ -72,8 +76,8 @@
       display: none;
     }
 
-    .toolbar-action + .toolbar-title {
-      padding-left: em(12);
+    .toolbar-title {
+      margin-left: em(8);
     }
 
     .left-nav-drawer {

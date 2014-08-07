@@ -41,13 +41,6 @@
   text-align: center;
   padding: em(16);
 
-  i.fa {
-    font-size: em(20);
-    width: em(24, 20);
-    line-height: em(24, 20);
-    vertical-align: top;
-  }
-
   & + .list-item-content {
     padding-left: em(16);
   }

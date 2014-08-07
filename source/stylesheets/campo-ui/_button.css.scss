@@ -143,8 +143,7 @@ button,
 .button-icon {
   min-width: 0;
   color: #555;
-  height: em(36);
-  width: em(36);
+  padding: em(6);
   border-radius: em(18);
 
   &:hover {
