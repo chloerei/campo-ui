@@ -2,15 +2,17 @@
   padding: em(8) 0;
   @include display(flex);
 
-  &.toolbar-blue {
-    background: $blue;
-    color: white;
-
-    .button-icon {
+  @each $name, $color in (blue: $blue, red: $red, green: $green, yellow: $yellow, teal: $teal, purple: $purple) {
+    &.toolbar-#{$name} {
+      background: $color;
       color: white;
 
-      &:active {
-        background: rgba(255, 255, 255, 0.15)
+      .button-icon {
+        color: white;
+
+        &:active {
+          background: rgba(255, 255, 255, 0.15)
+        }
       }
     }
   }

@@ -1,0 +1,23 @@
+---
+title: Toolbars
+---
+
+h2 Toolbars
+
+- %w(transparent blue red green yellow teal purple).each do |color|
+  .toolbar class="toolbar-#{color}"
+    .toolbar-action
+      button.button-icon
+        i.fa.fa-bars
+    .toolbar-title
+      = color
+    .toolbar-action
+      button.button-icon
+        i.fa.fa-search
+    .toolbar-action
+      button.button-icon
+        i.fa.fa-heart
+    .toolbar-action
+      button.button-icon
+        i.fa.fa-ellipsis-v
+  br
