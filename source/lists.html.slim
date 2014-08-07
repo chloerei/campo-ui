@@ -4,11 +4,85 @@ title: Lists
 
 h2 Lists
 
-h3 Single-line list
+h3 Single-line
+
+h4 Text only
 
 .list
   .list-item.active
-    | List item text.
+    .list-item-content
+      | List item text.
   - 2.times do
     .list-item
-      | List item text.
+      .list-item-content
+        | List item text.
+
+h4 Avatar with text
+
+.list
+  - 3.times do
+    .list-item.align-center
+      .list-item-avatar
+        img src="http://gravatar.com/avatar/5aec84cd0b5479a0d1d89b6ffa2a9a20.png?s=40"
+      .list-item-content
+        | Text here
+
+hr
+
+h3 Two-line
+
+h4 Text only
+
+.list
+  - 3.times do
+    .list-item
+      .list-item-content
+        .list-item-content-primary
+          | List item title
+        .list-item-content-secondary
+          | List item text.
+
+h4 Avatar with text
+
+.list
+  - 3.times do
+    .list-item.align-center
+      .list-item-avatar
+        img src="http://gravatar.com/avatar/5aec84cd0b5479a0d1d89b6ffa2a9a20.png?s=40"
+      .list-item-content
+        .list-item-content-primary
+          | List item title
+        .list-item-content-secondary
+          | List item text.
+
+hr
+
+h3 Three-line
+
+h4 Text only
+
+.list
+  - 3.times do
+    .list-item
+      .list-item-content
+        .list-item-content-primary
+          | List item title
+        .list-item-content-secondary
+          | List item text.
+          br
+          | List item text.
+
+h4 Vatar with text
+
+.list
+  - 3.times do
+    .list-item
+      .list-item-avatar
+        img src="http://gravatar.com/avatar/5aec84cd0b5479a0d1d89b6ffa2a9a20.png?s=40"
+      .list-item-content
+        .list-item-content-primary
+          | List item title
+        .list-item-content-secondary
+          | List item text.
+          br
+          | List item text.

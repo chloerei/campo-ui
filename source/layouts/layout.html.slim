@@ -35,17 +35,23 @@ html
         .left-nav-drawer-scrollable
           .list
             a.list-item href=url_for('index.html') class=('active' if current_page.path == 'index.html')
-              | Home
+              .list-item-content
+                | Home
             a.list-item href=url_for('typography.html') class=('active' if current_page.path == 'typography.html')
-              | Typography
+              .list-item-content
+                | Typography
             a.list-item href=url_for('buttons.html') class=('active' if current_page.path == 'buttons.html')
-              | Buttons
+              .list-item-content
+                | Buttons
             a.list-item href=url_for('forms.html') class=('active' if current_page.path == 'forms.html')
-              | Forms
+              .list-item-content
+                | Forms
             a.list-item href=url_for('cards.html') class=('active' if current_page.path == 'cards.html')
-              | Cards
+              .list-item-content
+                | Cards
             a.list-item href=url_for('lists.html') class=('active' if current_page.path == 'lists.html')
-              | Lists
+              .list-item-content
+                | Lists
 
     .main
       .container
