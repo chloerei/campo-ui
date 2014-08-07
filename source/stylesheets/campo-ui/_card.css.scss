@@ -57,5 +57,19 @@
 
 .card-actions {
   padding: em(6);
+  display: flex;
+  align-items: center;
   @include clearfix();
+
+  .card-action-left {
+  }
+
+  .card-action-right {
+    flex-grow: 1;
+    text-align: right;
+  }
+
+  .button-icon {
+    margin: em(2);
+  }
 }
