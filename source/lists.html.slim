@@ -17,6 +17,16 @@ h4 Text only
       .list-item-content
         | List item text.
 
+h4 Icon with text
+
+.list.list-single-line
+  - 3.times do
+    .list-item
+      .list-item-icon
+        i.fa.fa-file-text-o
+      .list-item-content
+        | Text here
+
 h4 Avatar with text
 
 .list.list-single-line
@@ -36,6 +46,19 @@ h4 Text only
 .list.list-two-line
   - 3.times do
     .list-item
+      .list-item-content
+        .list-item-content-primary
+          | List item title
+        .list-item-content-secondary
+          | List item text.
+
+h4 Icon with text
+
+.list.list-two-line
+  - 3.times do
+    .list-item
+      .list-item-icon
+        i.fa.fa-file-text-o
       .list-item-content
         .list-item-content-primary
           | List item title
@@ -72,7 +95,22 @@ h4 Text only
           br
           | List item text.
 
-h4 Vatar with text
+h4 Icon with text
+
+.list
+  - 3.times do
+    .list-item
+      .list-item-icon
+        i.fa.fa-file-text-o
+      .list-item-content
+        .list-item-content-primary
+          | List item title
+        .list-item-content-secondary
+          | List item text.
+          br
+          | List item text.
+
+h4 Avatar with text
 
 .list
   - 3.times do
