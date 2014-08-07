@@ -11,25 +11,25 @@ html
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'http://code.jquery.com/jquery-2.1.1.min.js', 'application'
   body.with-pinned-left-nav.with-fixed-toolbar
-    .toolbar.app-bar.toolbar-fixed
+    .toolbar.toolbar-blue.toolbar-fixed
       .toolbar-action.left-nav-toggle
-        button data-toggle="left-nav" data-target="#left-nav"
+        button.button-icon data-toggle="left-nav" data-target="#left-nav"
           i.fa.fa-bars
       .toolbar-title
         = current_page.data.title
       .toolbar-action
-        button
+        button.button-icon
           i.fa.fa-search
       .toolbar-action
-        button
+        button.button-icon
           i.fa.fa-heart
       .toolbar-action
-        button
+        button.button-icon
           i.fa.fa-ellipsis-v
 
     #left-nav.left-nav.with-fixed-toolbar
       .left-nav-drawer
-        .toolbar.app-bar.toolbar-fixed
+        .toolbar.toolbar-blue.toolbar-fixed
           .toolbar-title
             | Campo UI
         .left-nav-drawer-scrollable

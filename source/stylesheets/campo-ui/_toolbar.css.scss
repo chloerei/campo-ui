@@ -2,9 +2,17 @@
   padding: em(8) 0;
   @include display(flex);
 
-  &.app-bar {
+  &.toolbar-blue {
     background: $blue;
     color: white;
+
+    .button-icon {
+      color: white;
+
+      &:active {
+        background: rgba(255, 255, 255, 0.15)
+      }
+    }
   }
 
   @media screen and (min-width: $large-screen) {
@@ -30,12 +38,6 @@ body.with-fixed-toolbar {
 
 .toolbar-action {
   margin: 0 em(8);
-
-  button,
-  #{$all-button-inputs} {
-    padding: em(8);
-    min-width: 0;
-  }
 }
 
 .toolbar-title {
