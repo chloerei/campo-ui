@@ -37,6 +37,19 @@ h4 Avatar with text
       .list-item-content
         | Text here
 
+h4 Avatar with text and icon
+
+.list.list-two-line
+  - 3.times do
+    .list-item
+      .list-item-avatar
+        img src="http://gravatar.com/avatar/5aec84cd0b5479a0d1d89b6ffa2a9a20.png?s=40"
+      .list-item-content
+        | Text here
+      .list-item-icon
+        i.fa.fa-file-text-o
+
+
 hr
 
 h3 Two-line
@@ -77,6 +90,21 @@ h4 Avatar with text
           | List item title
         .list-item-content-secondary
           | List item text.
+
+h4 Avatar with text and icon
+
+.list.list-two-line
+  - 3.times do
+    .list-item
+      .list-item-avatar
+        img src="http://gravatar.com/avatar/5aec84cd0b5479a0d1d89b6ffa2a9a20.png?s=40"
+      .list-item-content
+        .list-item-content-primary
+          | List item title
+        .list-item-content-secondary
+          | List item text.
+      .list-item-icon
+        i.fa.fa-file-text-o
 
 hr
 
@@ -124,3 +152,20 @@ h4 Avatar with text
           | List item text.
           br
           | List item text.
+
+h4 Avatar with text and icon
+
+.list
+  - 3.times do
+    .list-item
+      .list-item-avatar
+        img src="http://gravatar.com/avatar/5aec84cd0b5479a0d1d89b6ffa2a9a20.png?s=40"
+      .list-item-content
+        .list-item-content-primary
+          | List item title
+        .list-item-content-secondary
+          | List item text.
+          br
+          | List item text.
+      .list-item-icon
+        i.fa.fa-file-text-o
