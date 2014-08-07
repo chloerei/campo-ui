@@ -10,14 +10,6 @@
   &.active {
     color: $blue;
   }
-
-  &.align-center {
-    align-items: center;
-
-    .list-item-avatar {
-      padding: em(8) 0 em(8) em(16);
-    }
-  }
 }
 
 .list-item-avatar {
@@ -46,3 +38,26 @@
   line-height: em(16, 14);
   color: #999;
 }
+
+.list-single-line {
+  .list-item {
+    align-items: center;
+  }
+
+  .list-item-avatar {
+    padding: em(8) 0 em(8) em(16);
+  }
+}
+
+.list-two-line {
+  .list-item {
+    align-items: center;
+  }
+}
+
+.list-three-line {
+  .list-item {
+    align-items: top;
+  }
+}
+
