@@ -145,6 +145,7 @@ button,
   color: #555;
   padding: em(8);
   border-radius: em(20);
+  @include action-icon;
 
   &:hover {
   }

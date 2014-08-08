@@ -40,6 +40,7 @@
 .list-item-icon {
   text-align: center;
   padding: em(16);
+  @include action-icon;
 
   & + .list-item-content {
     padding-left: em(16);

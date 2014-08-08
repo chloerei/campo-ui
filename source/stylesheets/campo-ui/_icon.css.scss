@@ -1,6 +1,8 @@
-i.fa {
-  font-size: em(20);
-  width: em(24, 20);
-  line-height: em(24, 20);
-  vertical-align: top;
+@mixin action-icon {
+  i.fa {
+    font-size: em(20);
+    width: em(24, 20);
+    line-height: em(24, 20);
+    vertical-align: top;
+  }
 }
