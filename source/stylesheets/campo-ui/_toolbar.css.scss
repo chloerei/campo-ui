@@ -45,6 +45,7 @@ body.with-fixed-toolbar {
 .toolbar-title {
   font-size: em(20);
   padding: em(8, 20);
+  margin: 0 em(8);
   line-height: em(24, 20);
   @include flex(1);
 }

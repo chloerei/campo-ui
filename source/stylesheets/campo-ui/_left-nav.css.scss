@@ -38,10 +38,6 @@
 }
 
 .left-nav.with-fixed-toolbar {
-  .toolbar-fixed {
-    padding-left: em(4);
-  }
-
   .left-nav-drawer {
     overflow: hidden;
   }
@@ -60,6 +56,13 @@
   }
 }
 
+.left-nav {
+  .toolbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 @media screen and (min-width: $large-screen) {
   body.with-pinned-left-nav {
     float: left;
@@ -68,7 +71,7 @@
     @include transition(padding 0.3s ease-in-out);
 
     .toolbar-fixed {
-      padding-left: em(304);
+      padding-left: em(312);
       @include transition(padding 0.3s ease-in-out);
     }
 
@@ -76,8 +79,10 @@
       display: none;
     }
 
-    .toolbar-title {
-      margin-left: em(8);
+    .left-nav {
+      .toolbar-fixed {
+        padding-left: 0;
+      }
     }
 
     .left-nav-drawer {
