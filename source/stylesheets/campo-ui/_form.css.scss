@@ -84,3 +84,24 @@ textarea {
   margin-left: 1em;
   color: #999;
 }
+
+.label-checkbox {
+  input[type="checkbox"] {
+    display: none;
+
+    & + .checkbox {
+      @include fa;
+      width: 1em;
+
+      &:before {
+        content: "\f096";
+      }
+    }
+
+    &:checked + .checkbox {
+      &:before {
+        content: "\f046";
+      }
+    }
+  }
+}
