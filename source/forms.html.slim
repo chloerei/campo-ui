@@ -17,9 +17,15 @@ textarea placeholder="Text Area" rows="3"
 textarea placeholder="Disabled Text Area" rows="3" disabled=true
 
 label.label-checkbox
-  input type='checkbox'
+  input type="checkbox"
   .checkbox
   | Checkbox
+
+- 3.times do
+  label.label-radio
+    input type="radio" name="raido"
+    .radio
+    | Radio
 
 h3 Validation
 

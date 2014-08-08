@@ -86,12 +86,17 @@ textarea {
 }
 
 .label-checkbox {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 1em;
+
   input[type="checkbox"] {
     display: none;
 
     & + .checkbox {
       @include fa;
       width: 1em;
+      margin-right: 1em;
 
       &:before {
         content: "\f096";
@@ -101,6 +106,32 @@ textarea {
     &:checked + .checkbox {
       &:before {
         content: "\f046";
+      }
+    }
+  }
+}
+
+.label-radio {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 1em;
+
+  input[type="radio"] {
+    display: none;
+
+    & + .radio {
+      @include fa;
+      width: 1em;
+      margin-right: 1em;
+
+      &:before {
+        content: "\f10c";
+      }
+    }
+
+    &:checked + .radio {
+      &:before {
+        content: "\f192";
       }
     }
   }
