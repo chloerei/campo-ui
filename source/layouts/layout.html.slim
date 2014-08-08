@@ -55,6 +55,9 @@ html
             a.list-item href=url_for('lists.html') class=('active' if current_page.path == 'lists.html')
               .list-item-content
                 | Lists
+            a.list-item href=url_for('menus.html') class=('active' if current_page.path == 'menus.html')
+              .list-item-content
+                | Menus
 
     .main
       .container
