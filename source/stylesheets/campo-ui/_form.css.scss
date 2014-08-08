@@ -88,14 +88,17 @@ textarea {
 .label-checkbox {
   display: block;
   cursor: pointer;
-  margin-bottom: 1em;
+  padding: em(12);
 
   input[type="checkbox"] {
     display: none;
 
     & + .checkbox {
       @include fa;
-      width: 1em;
+      font-size: em(20);
+      width: em(24, 20);
+      line-height: em(24, 20);
+      vertical-align: top;
       margin-right: 1em;
 
       &:before {
@@ -114,14 +117,17 @@ textarea {
 .label-radio {
   display: block;
   cursor: pointer;
-  margin-bottom: 1em;
+  padding: em(12);
 
   input[type="radio"] {
     display: none;
 
     & + .radio {
       @include fa;
-      width: 1em;
+      font-size: em(20);
+      width: em(24, 20);
+      line-height: em(24, 20);
+      vertical-align: top;
       margin-right: 1em;
 
       &:before {
